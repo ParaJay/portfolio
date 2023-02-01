@@ -26,6 +26,20 @@
     align-items: center;
  }
 
+ #message {
+    overflow: scroll;
+    resize: none;
+ }
+
+ #video {
+    position: relative;
+ }
+
+ .hobbiesContent p {
+    /* 1up :) */
+    font-size: 17px; 
+ }
+
  /*on button hover, change colour*/
  .dropdown-content a:hover, .navbar button:hover {background-color: darkcyan;}
 
@@ -66,8 +80,13 @@
     100% {color: hotpink;}
 }
 
-p { font-size: 40px; }
+.bigParagraph { font-size: 40px; }
 
-.animtest { animation: colour-switch linear 10s infinite; }
+.colourSwitch { animation: colour-switch linear 10s infinite; }
 
-.rainbowtest { animation: rainbow linear 7s infinite alternate; }
+
+/* background: linear-gradient(to right, #1c87c9 50%, #8ebf42 50%); */
+
+.rainbowTest { animation: rainbow linear 7s infinite alternate; }
+
+/* 3 images, have all same size, on hover make bigger */

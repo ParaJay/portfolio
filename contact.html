@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Portfolio</title>
+
+        <link rel="stylesheet" href="style.css"></link>
+        <link rel="icon" href="./res/12752915.png" type="image/x-icon"/>
+
+        <script>
+            function browsify(str) {
+                return str.replaceAll("\n", "%0A").replaceAll("\r", "%0D").replaceAll(" ", "%20");
+            }
+
+            function mail() {
+                var subject = document.getElementById("subject");
+                var message = document.getElementById("message");
+                var mail = document.createElement("a");
+
+                message = browsify(message.value);
+
+                mail.href = `mailto:calumjhunter@gmail.com?subject=${subject.value}&body=${message}`;
+                mail.click();
+            }
+        </script>
+	</head>
+
+    <body>
+        <div class="navbar">
+            <a href="https://github.com/ParaJay/" id="gitlink">
+                <img src="./res/670020.png" alt="GitHub" width="32px" height="32px" title="GitHub"/>
+            </a>
+
+            <button class="home"><a href="./index.html">Home</a></button>
+        </div>
+
+        <br>
+
+        <form id="form" onsubmit="mail()">
+            <input id="subject" placeholder="Enter your subject here..." required="true">
+
+            <br><br>
+            
+            <textarea id="message" placeholder="Enter your message here..." required="true" cols = 56 rows=28 resizable="false"></textarea>
+
+            <br><br>
+
+            <input type="submit" value="Send">
+        </form>
+    </body>
+
+	<footer>
+
+	</footer>
+</html>
