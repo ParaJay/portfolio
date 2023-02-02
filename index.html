@@ -23,20 +23,26 @@
             function changeButton() {
                 let q = document.location.search;
 
-                if(q.includes("?anim=false")) {
-                    let elem = document.getElementById("disableNavAnimations");
+                if(q.includes("?anim=true")) {
+                    // let elem = document.getElementById("disableNavAnimations");
 
-                    elem.innerHTML = "Enable Navbar Animations";
-                    elem.onclick = enableNavBarAnimations;
+                    // elem.innerHTML = "Enable Navbar Animations";
+                    // elem.onclick = enableNavBarAnimations;
+
+                    let el = document.getElementById("toggleNavAnimations");
+
+                    el.innerHTML = el.innerHTML.replaceAll("Enable", "Disable").replaceAll("enable", "disable");
+                    el.onclick = disableNavbarAnimations;
+                    // console.log(el.innerHTML);
                 }
             }
 
-            function enableNavBarAnimations() {
+            function disableNavbarAnimations() {
                 document.location.search = document.location.search.split("?")[0];
             }
 
-            function disableNavbarAnimations() {
-                document.location.search = document.location.search.split("?")[0] + "?anim=false";
+            function enableNavbarAnimations() {
+                document.location.search = document.location.search.split("?")[0] + "?anim=true";
             }
         </script>
 	</head>
@@ -45,11 +51,11 @@
         <header>
             <nav class="navbar">
                 <a href="https://github.com/ParaJay/" id="gitlink">
-                    <img src="./res/670020.png" alt="GitHub" width="32px" height="32px" title="GitHub">
+                    <img src="./res/670020.png" alt="GitHub" title="GitHub">
                 </a>
     
                 <a class="linkedPage" href="./contact.html" id="mailLink">
-                    <img src="./res/mail.png" alt="Contact Me" width="32px" height="32px" title="Contact Me">
+                    <img src="./res/mail.png" alt="Contact Me" title="Contact Me">
                 </a>
                 
                 <div class="dropdown">
@@ -66,6 +72,8 @@
                 </div>
     
                 <button><a class="linkedPage" href="./hobbies.html">Hobbies and Interests</a></button>
+
+                <button onclick="enableNavbarAnimations()" id="toggleNavAnimations"><img src="./res/enable.png" alt="Enable Navbar Animations" title="Enable Navbar Animations"></button>
             </nav>
         </header>
 
@@ -78,6 +86,5 @@
     </body>
 
 	<footer>
-        <button id="disableNavAnimations" onclick="disableNavbarAnimations()">Disable Navbar Animations</button>
 	</footer>
 </html>
