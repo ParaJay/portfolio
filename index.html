@@ -24,16 +24,10 @@
                 let q = document.location.search;
 
                 if(q.includes("?anim=true")) {
-                    // let elem = document.getElementById("disableNavAnimations");
-
-                    // elem.innerHTML = "Enable Navbar Animations";
-                    // elem.onclick = enableNavBarAnimations;
-
                     let el = document.getElementById("toggleNavAnimations");
 
                     el.innerHTML = el.innerHTML.replaceAll("Enable", "Disable").replaceAll("enable", "disable");
                     el.onclick = disableNavbarAnimations;
-                    // console.log(el.innerHTML);
                 }
             }
 
