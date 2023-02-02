@@ -10,8 +10,6 @@ window.onload = () => {
 
     const animPlay = anim == "true" || anim === null || anim === undefined;
 
-    // console.log(animPlay);
-
     for(let i = 0; i < sheets.length; i++) {
         let sheet = sheets[i];
         let rules = sheet.cssRules;
@@ -34,7 +32,5 @@ window.onload = () => {
         let cl = classes[i];
 
         cl.href = cl.href.split("?")[0] + query;
-
-        console.log(cl.href);
     }
 }
