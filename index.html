@@ -7,6 +7,38 @@
         <link rel="icon" href="./res/12752915.png" type="image/x-icon">
 
         <script src="./scripts/anims.js"></script>
+
+        <script>
+            let windowLoadEvent = window.onload;
+
+            if(windowLoadEvent) {
+                window.onload = () => {
+                    windowLoadEvent();
+                    changeButton();
+                }
+            } else {
+                window.onload = changeButton();
+            }
+
+            function changeButton() {
+                let q = document.location.search;
+
+                if(q.includes("?anim=false")) {
+                    let elem = document.getElementById("disableNavAnimations");
+
+                    elem.innerHTML = "Enable Navbar Animations";
+                    elem.onclick = enableNavBarAnimations;
+                }
+            }
+
+            function enableNavBarAnimations() {
+                document.location.search = document.location.search.split("?")[0];
+            }
+
+            function disableNavbarAnimations() {
+                document.location.search = document.location.search.split("?")[0] + "?anim=false";
+            }
+        </script>
 	</head>
 
     <body>
@@ -31,17 +63,21 @@
                         <a href="https://github.com/ParaJay/hangman/tree/main">Hangman</a>
                         <a href="https://paradoxplugins.weebly.com/phasmap2.html">PhasMap</a>
                     </div>
-                </div>        
+                </div>
     
                 <button><a class="linkedPage" href="./hobbies.html">Hobbies and Interests</a></button>
             </nav>
         </header>
 
         <div>
+            <br>
+            
+            <br>
             <p contentEditable=true class="bigParagraph rainbowTest">touch the rainbow taste the rainbow</p>
         </div>
     </body>
 
 	<footer>
+        <button id="disableNavAnimations" onclick="disableNavbarAnimations()">Disable Navbar Animations</button>
 	</footer>
 </html>
