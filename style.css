@@ -103,3 +103,9 @@
     80% { transform: scale(1.4); }
     100% { transform: scale(1.5); }
 }
+
+.navbar { animation: navbarAnimation linear 2s; }
+
+@keyframes navbarAnimation {
+    from { transform: translateX(-200%); }
+}
