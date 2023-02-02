@@ -7,12 +7,15 @@
         <link rel="stylesheet" href="style.css"></link>
         <link rel="icon" href="./res/12752915.png" type="image/x-icon"/>
 
+        <script src="./scripts/anims.js"></script>
+
         <script>
             function browsify(str) {
                 return str.replaceAll("\n", "%0A").replaceAll("\r", "%0D").replaceAll(" ", "%20");
             }
 
             function mail() {
+                console.log("e");
                 var subject = document.getElementById("subject");
                 var message = document.getElementById("message");
                 var mail = document.createElement("a");
@@ -31,7 +34,7 @@
                 <img src="./res/670020.png" alt="GitHub" width="32px" height="32px" title="GitHub"/>
             </a>
 
-            <button class="home"><a href="./index.html">Home</a></button>
+            <button class="home"><a class="linkedPage" href="./index.html">Home</a></button>
         </div>
 
         <br>
