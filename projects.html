@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Animations</title>
+
+        <link rel="stylesheet" href="style.css"></link>
+        <link rel="icon" href="./res/12752915.png" type="image/x-icon"/>
+
+        <script src="./scripts/anims.js"></script>
+
+        <script>
+            let windowLoadEvent = window.onload;
+
+            if(windowLoadEvent) {
+                window.onload = () => {
+                    windowLoadEvent();
+                    loadFrame();
+                }
+            } else {
+                window.onload = changeButton();
+            }
+
+            function loadFrame() {
+                let query = window.location.search;
+
+                if(query === undefined) {
+                    return;
+                }
+
+                let params = new URLSearchParams(query);
+                let project = params.get("project");
+
+                if(project === null) {
+                    return;
+                }
+
+                let frame = document.createElement("iframe");
+
+                frame.id = "frame";
+                frame.src = "https://parajay.github.io/" + project;
+
+                document.body.appendChild(frame);
+
+                let link = document.createElement("a");
+
+                link.innerHTML = "source";
+                link.href = "https://github.com/ParaJay/" + project;
+
+                document.body.appendChild(link);
+            }
+        </script>
+
+        <style>
+            #frame {
+                width: 100%;
+                height: 100vh;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <nav class="navbar">
+                <a href="https://github.com/ParaJay/" id="gitlink">
+                    <img src="./res/670020.png" alt="GitHub" width="32px" height="32px" title="GitHub"/>
+                </a>
+
+                <a class="linkedPage" href="./contact.html" id="mailLink">
+                    <img src="./res/mail.png" alt="Contact Me" width="32px" height="32px" title="Contact Me">
+                </a>
+
+                <button class="home"><a class="linkedPage" href="./index.html">Home</a></button>
+
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        Pick Project
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="?project=connect-four">Connect Four</a>
+                        <a href="?project=tic-tac-toe">Tic-Tac-Toe</a>
+                        <a href="?project=pip-game">Pip</a>
+                        <a href="?project=hangman">Hangman</a>
+                        <a href="?project=css-animations">CSS Animations</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </body>
+
+    <footer>
+    </footer>
+</html>
