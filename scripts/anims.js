@@ -31,6 +31,24 @@ window.onload = () => {
     for(let i = 0; i < classes.length; i++) {
         let cl = classes[i];
 
-        cl.href = cl.href.split("?")[0] + query;
+        cl.href = cl.href.split("?")[0] + extractParam("anim");
+    }
+
+    function extractParam(param) {
+        const query = window.location.search;
+
+        if(query === undefined) {
+            return "";
+        }
+
+        const params = new URLSearchParams(query);
+
+        const value = params.get(param);
+
+        if(value === null) {
+            return "";
+        }
+
+        return `?${param}=${value}`;
     }
 }
