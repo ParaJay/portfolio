@@ -10,18 +10,7 @@
         <script src="./scripts/anims.js"></script>
 
         <script>
-            let windowLoadEvent = window.onload;
-
-            if(windowLoadEvent) {
-                window.onload = () => {
-                    windowLoadEvent();
-                    loadFrame();
-                }
-            } else {
-                window.onload = changeButton();
-            }
-
-            function loadFrame() {
+            window.addEventListener("load", () => {
                 let query = window.location.search;
 
                 if(query === undefined) {
@@ -48,7 +37,7 @@
                 link.href = "https://github.com/ParaJay/" + project;
 
                 document.body.appendChild(link);
-            }
+            });
         </script>
 
         <style>

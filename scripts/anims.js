@@ -1,4 +1,4 @@
-window.onload = () => {
+window.addEventListener("load", () => {
     let el = document.getElementsByClassName("navbar");
 
     let sheets = document.styleSheets;
@@ -51,4 +51,4 @@ window.onload = () => {
 
         return `?${param}=${value}`;
     }
-}
+});

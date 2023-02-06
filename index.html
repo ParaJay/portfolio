@@ -9,18 +9,7 @@
         <script src="./scripts/anims.js"></script>
 
         <script>
-            let windowLoadEvent = window.onload;
-
-            if(windowLoadEvent) {
-                window.onload = () => {
-                    windowLoadEvent();
-                    changeButton();
-                }
-            } else {
-                window.onload = changeButton;
-            }
-
-            function changeButton() {
+            window.addEventListener("load", () => {
                 let q = document.location.search;
 
                 if(q.includes("?anim=true")) {
@@ -29,7 +18,7 @@
                     el.innerHTML = el.innerHTML.replaceAll("Enable", "Disable").replaceAll("enable", "disable");
                     el.onclick = disableNavbarAnimations;
                 }
-            }
+            });
 
             function disableNavbarAnimations() {
                 document.location.search = document.location.search.split("?")[0];
