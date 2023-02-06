@@ -8,7 +8,7 @@ window.onload = () => {
 
     const anim = params.get('anim');
 
-    const animPlay = anim == "false" || anim === null || anim === undefined;
+    const disableNavbarAnim = anim == "false" || anim === null || anim === undefined;
 
     for(let i = 0; i < sheets.length; i++) {
         let sheet = sheets[i];
@@ -19,7 +19,7 @@ window.onload = () => {
             let name = rule.name;
 
             if(name == "navbarAnimation") {
-                if(animPlay) {
+                if(disableNavbarAnim) {
                     sheet.deleteRule(j);
                 }
             }
